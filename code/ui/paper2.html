@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../js/util.js"></script>
+    <script type="text/javascript" src="../js/paper2.js"></script>
+</head>
+
+
+<body onload="onload2()">
+    <div class="HeadDiv">
+        <div id="PaperTitleDiv"></div>
+        <button class="ant-btn ant-btn-red" onclick = "CorrectPaper2()">Correcting Paper</button>
+        <div >
+            <div id="PaperQuesDiv2"></div>
+        </div>
+        <br>
+    </div>
+</body>
+
+<style>
+    .Mytable{
+        text-align: center;
+        background-color: AliceBlue;
+        width: 400px;
+        height: 100px;
+    }
+    .global {
+        text-align: center;
+        font-size: 15px;
+        min-height: 95%;
+    }
+    .PaperQues{
+        text-align:center;
+        font-size: 25px;
+        word-wrap: break-word;
+    }
+    .HeadDiv{
+        text-align:center;
+    }
+
+    .divItem {
+        margin-left: 5px;
+        margin-bottom: 18px;
+        font-size: 15px;
+        word-wrap: break-word;
+    }
+
+        
+    /* altrowstable */
+
+    table.altrowstable {
+        font-family: verdana,arial,sans-serif;
+        font-size:15px;
+        color:#333333;
+        border-width: 5px;
+        border-color: #a9c6c9;
+        border-collapse: collapse;
+    }
+    table.altrowstable th {
+        border-width: 5px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+    table.altrowstable td {
+        border-width: 5px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+    .oddrowcolor{
+        background-color:#d4e3e5;
+    }
+    .evenrowcolor{
+        background-color:#c3dde0;
+    }
+    /* /altrowstable */
+
+    .ant-btn {
+    line-height: 1.499;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+    cursor: pointer;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    height: 32px;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: rgba(0,0,0,0.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+
+.ant-btn-primary {
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+}
+.ant-btn-red {
+    color: #fff;
+    background-color: #FF5A44;
+    border-color: #FF5A44;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+}
+
+.btn{
+        padding: 5px 10px;
+        background: #00b0f0;
+        color: #FFF;
+        border: none;
+        border-radius: 10px;
+
+    }
+
+
+
+input{
+            border: 2px solid #ccc;
+            padding: 5px 0px;
+            border-radius: 3px;
+            padding-left:5px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+            }
+input:focus{
+        border-color: #00b0f0;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(48, 195, 221, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(9, 142, 250, 0.6)
+}
+
+.TA{
+    color: #333333;
+    font-size:20px;
+    border:0;border-radius:5px;background-color:rgba(241,241,241,.98);padding: 10px;resize: none;
+
+}
+
+select{ 
+            width: 120px;
+            height: 30px;
+            padding: 0.2em 0.4em 0.2em 0.4em;
+            vertical-align: middle;
+            border: 2px solid #94c1e7;
+            -moz-border-radius: 0.2em;
+            -webkit-border-radius: 0.2em;
+            border-radius: 0.2em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #ffffff;
+            font-family: SimHei;
+            font-size: 18px;
+            color: gray;
+            cursor: pointer;
+    }
+
+
+</style>
+
+</html>

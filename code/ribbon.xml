@@ -1,0 +1,23 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="OnAddinLoad">
+<ribbon startFromScratch="false">
+    <tabs>
+        <tab id="wpsAddinTab" label="YY加载项v1">
+            <group id="btnDemoGroup2" label="group2">
+                <button id="btnShowDialog" label="生成试题" onAction="OnAction" enabled="true" getImage="GetImage" visible="true"  size="large"/>
+                <button id="btnShowLoginDialog" label="百度搜索" onAction="OnAction" enabled="true" getImage="GetImage" visible="true"  size="large"/>
+                <button id="btnShowMulu" label="显示目录" onAction="OnAction" enabled="true" getImage="GetImage" visible="true"  size="large"/>
+                <button id="btnShowTrans" label="划词翻译" onAction="OnAction" enabled="true" getImage="GetImage" visible="true"  size="large"/>
+                <!-- <button id="btnGetAllReview" label="获取注释" onAction="OnAction" getEnabled="OnGetEnabled" getImage="GetImage" getVisible="OnGetVisible" size="large"/> -->
+            </group>
+            <group id="GroupExcelAddIn12" label="ExcelAddIn12">
+
+            </group>
+            <group id="grpControlsEx" label="内容控件控制样例">
+                <button id="btnShowControlsTaskPanel" label="CreatePaper" onAction="OnAction" enabled="true" getImage="GetImage" visible="true"  size="large"/>
+            </group>
+
+        </tab>
+    </tabs>
+</ribbon>
+   
+</customUI>

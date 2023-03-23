@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<script type="text/javascript" src="../js/util.js"></script>
+<script type="text/javascript" src="../js/CreatePaper.js"></script>
+<script type="text/javascript" src="../js/htmlHelper.js"></script>
+<script type="text/javascript" src="../js/OCR.js"></script>
+<script type="text/javascript" src="../js/jquery-3.6.0.js"></script>
+
+<body onload="onload()">
+    <div class="global">
+        <div class="HeadDiv"><h1 >WPS-I❤题库</h1></div>
+        <div class="HeadDiv">
+            当前科目：
+            <input type="text" name="ClassName" id="ClassName">
+            <td width = "8%"><button onclick = "SetClass()" class="btn">点击重置</button> </td>
+            <td width = "8%"><button onclick = "test()" class="btn">刷新</button> </td>
+            <br><br>
+            <div>
+                插入新的章节：
+                <input type="text" name="ChapterName" id="ChapterName">
+                <td width = "8%"><button class="btn" onclick = "InsertChapter()">保存</button> </td>
+                <br>
+            </div>
+            <br>
+            <button class="btn" onclick = "SaveAsOFD()">输出为OFD</button>
+            <div id="QTypeTable">
+                <br>
+                <table class="Mytable2" border="0" align="center"><tr><th>选择题型</th><th>章节</th><th>插入题型</th></tr>
+                    <td>
+                        <select id="QType">
+                            <option value ="选择题">选择题</option>
+                            <option value ="填空题">填空题</option>
+                            <option value= "简答题">简答题</option>
+                            <option value= "自定义">自定义</option>
+                        </select>
+                    </td>
+                    <td>
+                        <div id = "InsertChp">  </div>
+                    </td>
+                    <td>
+                        <div id = "InsertQType">  </div>
+                    </td>
+                </table>
+                <br><br>
+
+                <br>
+                <table class="Mytable2" border="0" align="center"><tr><th>提取图片文字</th></tr>
+                    <td>
+                        <input type="file" name="" id="OCRFile" value=""/>
+                        <button class="btn" onclick = "loadOCR()">确认</button>
+                    </td>
+                    <tr><td>
+                        <div style="text-align: center" id = "OCRDIV">
+                            <canvas id="myCanvas" width="100px" height="100px"></canvas> 
+                        </div>
+                    </td></tr>
+                </table>
+                <br><br>
+
+                <table class="Mytable" border="0" align="center">
+                    <tr><th>选择章节</th><th>选择题型</th></tr>
+                    <td>
+                        <div id="InsertQASelectChp"></div>
+                    </td>
+                    <td>
+                        <div id="InsertQASelectQT"></div>
+                    </td>
+                    <tr><th>设置题目难度</th><th>设置题目熟练度</th></tr>
+                    <td>
+                        <select id="InsertQD">
+                            <option value = "0">无要求</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                        </select>
+                        <button class="btn">确认</button>
+                      </td>
+                      <td>
+                        <select id="InsertQT">
+                            <option value = "0">无要求</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                        </select>
+                        <button class="btn">确认</button>
+                      </td>
+                    <tr><th>输入题目内容</th><th>输入答案</th></tr>
+                    <td>
+                        <div id = "InsertQuestion">  </div>
+                    </td>
+                    <td>
+                        <div id = "InsertQAnswer">  </div>
+                    </td>
+
+                </table>
+                <br>
+                <div id = "InsertQA">  </div>
+
+            </div>
+        </div>
+        <br><br>
+        <div class="HeadDiv">
+            <div id="contentControlsDiv"></div>
+        </div>
+               
+    </div>
+</body>
+
+<style>
+    .global {
+        font-size: 20px;
+        min-height: 95%;
+    }
+    .HeadDiv{
+        text-align:center;
+    }
+    .TableDiv{
+        text-align:center;
+    }
+    .btn{
+        padding: 5px 10px;
+        background: #00b0f0;
+        color: #FFF;
+        border: none;
+        border-radius: 10px;
+
+    }
+    .Mytable{
+        text-align: center;
+        background-color: AliceBlue;
+        border:solid 5px MistyRose ;
+        width: 400px;
+        height: 300px;
+    }
+    .Mytable2{
+        text-align: center;
+        background-color: AliceBlue;
+        border:solid 5px MistyRose ;
+        width: 400px;
+        height: 100px;
+    }
+    .ant-btn {
+    line-height: 1.499;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+    cursor: pointer;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    height: 32px;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: rgba(0,0,0,0.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+
+.ant-btn-primary {
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+}
+    .ant-btn-red {
+            color: #fff;
+            background-color: #FF5A44;
+            border-color: #FF5A44;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+            -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+        }
+    input{
+            border: 2px solid #ccc;
+            padding: 5px 0px;
+            border-radius: 3px;
+            padding-left:5px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+            }
+    input:focus{
+            border-color: #00b0f0;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(48, 195, 221, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(9, 142, 250, 0.6)
+    }
+
+    select{ 
+            width: 120px;
+            height: 30px;
+            padding: 0.2em 0.4em 0.2em 0.4em;
+            vertical-align: middle;
+            border: 2px solid #94c1e7;
+            -moz-border-radius: 0.2em;
+            -webkit-border-radius: 0.2em;
+            border-radius: 0.2em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #ffffff;
+            font-family: SimHei;
+            font-size: 18px;
+            color: gray;
+            cursor: pointer;
+    }
+
+    .TA{
+    color: #333333;
+    font-size:16px;
+    border:0;border-radius:10px;background-color:rgba(241,241,241,.98);;resize: none;
+
+}
+
+</style>
+
+</html>

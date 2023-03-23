@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<script type="text/javascript" src="../js/util.js"></script>
+<script type="text/javascript" src="../js/taskpane_Controls.js"></script>
+
+<body onload="onload()">
+    <div class="global">
+        <div class="divItem">
+            以下是本文档中的所有内容控件名称和内容：test
+        </div>
+
+        <div>
+            <td width = "8%"><button onclick = "InsertClass()" class="btn">插入科目</button> </td>
+            <td width = "8%"><button onclick = "InsertChapter()">插入章节</button> </td>
+            <td width = "8%"><button onclick = "InsertQuestionType()">插入题型</button> </td>
+            <td width = "8%"><button onclick = "InsertQuestion()">插入题目</button> </td>
+
+            <td width = "8%"><button onclick = "test()">testt</button> </td>
+        </div>
+
+        <div>
+            <td width = "8%"><button onclick = "ccInsertTxtControl()">插入文本内容控件</button> </td>
+            <td width = "8%"><button onclick = "ccInsertImgControl()">插入图片内容控件</button></td>
+            <td width = "8%"><button onclick = "ccGetAll()">提取所有文本</button></td>
+            <td width = "8%"><button onclick = "ccMerge()">合并文档</button></td>
+        </div>
+
+        <div id="contentControlsDiv">
+
+        </div>       
+    </div>
+</body>
+
+<style>
+    .global {
+        font-size: 15px;
+        min-height: 95%;
+    }
+
+    .divItem {
+        margin-left: 5px;
+        margin-bottom: 18px;
+        font-size: 15px;
+        word-wrap: break-word;
+    }
+
+    .btn{
+        padding: 5px 10px;
+        background: #00b0f0;
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+
+    }
+</style>
+
+</html>
