@@ -4,6 +4,7 @@
 • 在大学生及准备各类考试的社会人员中，由于不像初高中一样有老师指导，错题集以及练习的题库都需要自己整理。
 • 大多数现有的错题集、题库软件主要以APP形式操作，不够便利，生成题库可移植性差，用户操作自由度低。
 ## 项目简介
+demo 视频链接：https://pan.quark.cn/s/ea60cc423a15
 本项目借助 wps 加载项机制在 wps 文字中的插件式应用的特点，开发了一款基于文档的包含自定义题目、结构化分类题目、自动生成题库、根据题目个性设置生成练习试卷并集成OCR、划词翻译等实用功能的结构化题库文档管理工具——WPS-I❤题库。
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679536971559-4f04652c-5369-4076-8056-22f74035ad6e.png#averageHue=%23d5c3ae&clientId=uad2c637e-f9c8-4&from=paste&height=287&id=ud10d50e6&name=image.png&originHeight=831&originWidth=1303&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=337102&status=done&style=none&taskId=ufbab6c2e-5f35-4370-95dc-20729ee2fd0&title=&width=450.7575988769531)
 如图所示主要工作界面包含了操作文档题库的任务窗口、根据结构自动生成的章节、题库文档区域三大模块，以及生成试题和电子题库、百度搜索、划词翻译等功能入口。
