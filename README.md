@@ -1,2 +1,18 @@
-# WPSIQuestionBank
-基于WPS加载项的docx题库管理与生成工具
+## 背景
+• 随着 PC 机器及平板电脑在学习办公中的普及，wps 等办公类软件使用频率非常之高。
+• 仅使用wps文档等软件自己整理文档题库的缺点十分明显，难以统一题库标准，且难以结构化管理文档，想要练习题库内容只能手动提取。
+• 在大学生及准备各类考试的社会人员中，由于不像初高中一样有老师指导，错题集以及练习的题库都需要自己整理。
+• 大多数现有的错题集、题库软件主要以APP形式操作，不够便利，生成题库可移植性差，用户操作自由度低。
+## 项目简介
+本项目借助 wps 加载项机制在 wps 文字中的插件式应用的特点，开发了一款基于文档的包含自定义题目、结构化分类题目、自动生成题库、根据题目个性设置生成练习试卷并集成OCR、划词翻译等实用功能的结构化题库文档管理工具——WPS-I❤题库。
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679536971559-4f04652c-5369-4076-8056-22f74035ad6e.png#averageHue=%23d5c3ae&clientId=uad2c637e-f9c8-4&from=paste&height=287&id=ud10d50e6&name=image.png&originHeight=831&originWidth=1303&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=337102&status=done&style=none&taskId=ufbab6c2e-5f35-4370-95dc-20729ee2fd0&title=&width=450.7575988769531)
+如图所示主要工作界面包含了操作文档题库的任务窗口、根据结构自动生成的章节、题库文档区域三大模块，以及生成试题和电子题库、百度搜索、划词翻译等功能入口。
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679537005512-d036c919-2141-42f8-a2e8-f9e8529fa745.png#averageHue=%23d9c2b2&clientId=uad2c637e-f9c8-4&from=paste&height=329&id=ue6918891&name=image.png&originHeight=831&originWidth=1204&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=319646&status=done&style=none&taskId=u6ff1742b-4d50-430f-b00a-17582cb52af&title=&width=476.757568359375)
+生成题库文档的控制面板界面，包含设置科目、设置章节、设置题型、根据所选章节对题目进行个性化属性填写以及插入文档的功能和OCR、输出OFD文件等操作。
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679537054780-6face524-1769-4fc1-98d2-8d7fbabab570.png#averageHue=%23dad5c6&clientId=uad2c637e-f9c8-4&from=paste&height=406&id=u7f97bd70&name=image.png&originHeight=837&originWidth=2017&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=818264&status=done&style=none&taskId=u7b191edc-dce9-4ba3-9fd5-39e7342ccd9&title=&width=977.939393939394)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679537064862-2ea35f18-0f3d-4deb-bb0b-8488e3572785.png#averageHue=%23f6edec&clientId=uad2c637e-f9c8-4&from=paste&height=421&id=u55356f9b&name=image.png&originHeight=869&originWidth=2060&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=284792&status=done&style=none&taskId=ucb07d43e-b203-4f93-a8f8-1fa41f1e762&title=&width=998.7878787878788)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679537073595-d244fce9-2158-443e-bae8-6b41502ff151.png#averageHue=%23dee5d2&clientId=uad2c637e-f9c8-4&from=paste&height=400&id=u736e0912&name=image.png&originHeight=824&originWidth=2049&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=1035083&status=done&style=none&taskId=ua0ecfdf9-e18c-4b6e-8c26-1c9a40f32e3&title=&width=993.4545454545455)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679537083030-46b3b7e4-57a3-4b67-9d4d-98f4e79671d1.png#averageHue=%23c6d8c7&clientId=uad2c637e-f9c8-4&from=paste&height=422&id=u25e753e3&name=image.png&originHeight=870&originWidth=1923&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=1093411&status=done&style=none&taskId=uab636df3-5e75-4b40-aab2-028aeb52bf2&title=&width=932.3636363636364)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679537094732-90f355e1-b451-4451-9e9d-47a18db4dc00.png#averageHue=%23d2e0d1&clientId=uad2c637e-f9c8-4&from=paste&height=405&id=uc14dde4b&name=image.png&originHeight=835&originWidth=1997&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=1197467&status=done&style=none&taskId=ue5793f20-a475-405a-bacf-26fcc62edf1&title=&width=968.2424242424242)
+![image.png](https://cdn.nlark.com/yuque/0/2023/png/26756779/1679537105123-3f4433eb-d8cd-4b08-9d0d-8407eac1bb26.png#averageHue=%23d6e5d9&clientId=uad2c637e-f9c8-4&from=paste&height=386&id=u61ddc01a&name=image.png&originHeight=796&originWidth=2015&originalType=binary&ratio=2.0625&rotation=0&showTitle=false&size=785721&status=done&style=none&taskId=uc2e1c3f8-1984-4bc2-aaa7-ef4b58b48b7&title=&width=976.969696969697)
+
